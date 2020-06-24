@@ -4,7 +4,7 @@ A sample command-line application.
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
 =======
-# learn-dart-a-hard-way
+# [learn-dart-a-hard-way](https://leanpub.com/learndartthehardway)
 ## It's a book on learning Dart programming language
 I have uploaded the source code I have used in this book. 
 ## Finally this book will lead to two more books 
