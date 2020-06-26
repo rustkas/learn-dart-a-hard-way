@@ -1,13 +1,11 @@
 void main() {
-  var cow = Cow();
-  cow.name = 'Daisy';
-  cow.showName();
   var cat = Cat();
   cat.name = 'Meaow';
   cat.showName();
   cat.eat();
+  cat.canRun();
   var anotherCat = Cat.namedCatConstructor();
-  anotherCat.showName();
+  anotherCat.canRun();
 }
 
 class Animal {
@@ -20,7 +18,6 @@ class Animal {
   }
   void showName() {
     print(name);
-    print('Hi from $name');
   }
 
   void eat() {
@@ -28,9 +25,16 @@ class Animal {
   }
 }
 
-class Cat extends Animal {
-//overriding parent constructor
-//although constructors are not inherited
+class Dog {
+  void canRun() {
+    print('I can run.');
+  }
+}
+
+class Cat extends Animal with Dog {
+ //reusing another class
+ //overriding parent constructor
+ //although constructors are not inherited
   Cat() : super() {
     print('I am child cat class overriding super Animal class.');
   }
@@ -41,35 +45,11 @@ class Cat extends Animal {
   @override
   void showName() {
     print('Hi from cat.');
-    print(name);
   }
 
   @override
   void eat() {
     super.eat();
     print('Cat doesn\'t eat vegetables..');
-  }
-}
-
-class Cow extends Animal {
-//overriding parent constructor
-//although constructors are not inherited
-  Cow() : super() {
-    print('I am child cow class overriding super Animal class.');
-  }
-  Cow.namedCatConstructor() : super.namedConstructor() {
-    print(
-        'The child cow named constructor overrides the parent animal named constructor.');
-  }
-  @override
-  void showName() {
-    print('Hi from cow.');
-    print(name);
-  }
-
-  @override
-  void eat() {
-    super.eat();
-    print('Cow does eat grass..');
   }
 }
